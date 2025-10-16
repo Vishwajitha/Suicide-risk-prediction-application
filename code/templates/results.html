@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suicide Risk Prediction Results</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Suicide Risk Prediction Results</h1>
+
+        <h3>Total Predictions:</h3>
+        <p>Suicide Risk: {{ suicide_risk_count }}</p>
+        <p>No Suicide Risk: {{ no_suicide_risk_count }}</p>
+
+        <!-- Display the pie chart visualization -->
+        <h3>Prediction Distribution</h3>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Suicide Risk Analysis">
+        <img src="data:image/png;base64,{{ bar_chart_url }}" alt="Emotion Analysis">
+
+        <h3>Prediction Details:</h3>
+        <table>
+            <tr>
+                <th>Author Username</th>
+                <th>Tweet Text</th>
+                <th>Suicide Risk</th>
+                <th>Emotion</th>
+            </tr>
+            {% for username, text, prediction, emotion in result %}
+            <tr>
+                <td>{{ username }}</td>
+                <td>{{ text }}</td>
+                <td>{{ prediction }}</td>
+                <td>{{ emotion }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <!-- Logout Button -->
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</body>
+</html>

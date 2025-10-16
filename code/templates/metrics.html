@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Performance Metrics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2, h3 {
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .highlight {
+            background: #ffeb3b;
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Model Performance Metrics</h2>
+
+    <h3>BERT Model</h3>
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1-Score</th>
+            <th>Support</th>
+        </tr>
+        <tr>
+            <td>0</td> <td>0.97</td> <td>0.94</td> <td>0.96</td> <td>513</td>
+        </tr>
+        <tr>
+            <td>1</td> <td>0.94</td> <td>0.97</td> <td>0.96</td> <td>487</td>
+        </tr>
+        <tr>
+            <th>Accuracy</th> <td colspan="4">0.96</td>
+        </tr>
+        <tr>
+            <th>Macro Avg</th> <td>0.96</td> <td>0.96</td> <td>0.96</td> <td>1000</td>
+        </tr>
+        <tr>
+            <th>Weighted Avg</th> <td>0.96</td> <td>0.96</td> <td>0.96</td> <td>1000</td>
+        </tr>
+    </table>
+
+    <h3>Confusion Matrix (BERT)</h3>
+    <table>
+        <tr>
+            <th></th> <th>Predicted 0</th> <th>Predicted 1</th>
+        </tr>
+        <tr>
+            <th>Actual 0</th> <td>482</td> <td>31</td>
+        </tr>
+        <tr>
+            <th>Actual 1</th> <td>13</td> <td>474</td>
+        </tr>
+    </table>
+
+    <div class="highlight">Overall Model Confidence Score: 0.9814</div>
+
+    <h3>XLNet Model</h3>
+    <div class="highlight">Test Accuracy: 0.9984 | Average Confidence Score: 0.9986</div>
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1-Score</th>
+            <th>Support</th>
+        </tr>
+        <tr>
+            <td>Hate</td> <td>0.9971</td> <td>1.0000</td> <td>0.9985</td> <td>3063</td>
+        </tr>
+        <tr>
+            <td>Anger</td> <td>0.9992</td> <td>0.9945</td> <td>0.9968</td> <td>2537</td>
+        </tr>
+        <tr>
+            <td>Love</td> <td>0.9997</td> <td>0.9996</td> <td>0.9997</td> <td>7860</td>
+        </tr>
+        <tr>
+            <td>Worry</td> <td>0.9989</td> <td>0.9989</td> <td>0.9989</td> <td>878</td>
+        </tr>
+        <tr>
+            <td>Distress</td> <td>0.9962</td> <td>0.9985</td> <td>0.9974</td> <td>3442</td>
+        </tr>
+        <tr>
+            <td>Happiness</td> <td>0.9991</td> <td>0.9987</td> <td>0.9989</td> <td>5429</td>
+        </tr>
+        <tr>
+            <td>Fun</td> <td>0.9940</td> <td>0.9975</td> <td>0.9957</td> <td>1991</td>
+        </tr>
+
+</div>
+<!-- Back Button -->
+<button onclick="goBack()">results</button>
+
+<script>
+    function goBack() {
+        window.location.href = "/results"; // Change to the correct route
+}
+</script>
+
+</body>
+</html>
+
+
